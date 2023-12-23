@@ -1,5 +1,5 @@
 {
-    "name": "ST-backend",
+    "name": "stbackend",
     "version": "0.0.5",
     "description": "Safe Travel backend - nodeJS",
     "main": "index.js",
@@ -34,6 +34,9 @@
         "morgan": "^1.10.0",
         "node-schedule": "^2.1.1",
         "nodemailer": "^6.9.1",
+        "nodemon": "^3.0.2",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^5.0.5",
         "twitter-api-v2": "^1.14.2",
         "winston": "^3.8.2"
     },
@@ -54,7 +57,7 @@
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^4.2.1",
         "tsc-watch": "^6.0.4",
-        "typescript": "^5.0.4"
+        "typescript": "^5.3.3"
     },
     "_moduleAliases": {
         "@/resources": "dist/resources",
