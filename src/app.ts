@@ -13,13 +13,13 @@ import morganMiddleware from '@/middlewares/morgan.middlewares';
 
 class App {
     public express: Application;
-    public host: string;
+    // public host: string;
     public port: number;
 
-    constructor(controllers: Controller[], jobs: Job[], host: string, port: number) {
+    constructor(controllers: Controller[], jobs: Job[], port: number) {
         this.express = express();
         this.port = port;
-        this.host = host;
+        // this.host = host;
 
         // this.initialiseSwagger();
         this.initialiseDatabaseConnection();
@@ -74,8 +74,8 @@ class App {
     }
 
     public listen(): void {
-        this.express.listen(this.port, this.host, () => {
-            Logger.debug(`Server is up and running @ http://${this.host}:${this.port}`);
+        this.express.listen(this.port, () => {
+            Logger.debug(`Server is up and running @ http://:${this.port}`);
         });
     }
 
