@@ -8,6 +8,7 @@ import SystemController from '@/resources/system/system.controller';
 import fetchStatsJob from '@/jobs/fetchStats.job';
 
 validateEnv();
+require('dotenv').config();
 
 const constructors = [new AuthController(), new UserController(), new SystemController()];
 const jobs = [new fetchStatsJob()];
