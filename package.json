@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node dist/index.js",
-        "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+        "old-dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+        "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
         "format": "npx prettier --write .",
         "build": "tsc",
         "postinstall": "npm run build"
@@ -53,6 +54,7 @@
         "eslint": "^8.40.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^4.2.1",
+        "ts-node": "^10.9.2",
         "tsc-watch": "^6.0.4",
         "typescript": "^5.3.3"
     },

@@ -8,20 +8,15 @@ import Job from '@/utils/interfaces/job.interface';
 import Logger from '@/utils/winston';
 import ErrorMiddleware from '@/middlewares/error.middleware';
 import morganMiddleware from '@/middlewares/morgan.middlewares';
-// import expressJSDocSwagger from 'express-jsdoc-swagger';
-// import swaggerOptions from './config/swagger';
 
 class App {
     public express: Application;
-    // public host: string;
     public port: number;
 
     constructor(controllers: Controller[], jobs: Job[], port: number) {
         this.express = express();
         this.port = port;
-        // this.host = host;
 
-        // this.initialiseSwagger();
         this.initialiseDatabaseConnection();
         this.initialiseMiddleware();
         this.initialiseControllers(controllers);
@@ -29,11 +24,6 @@ class App {
 
         this.showJobs(jobs);
     }
-
-    // private initialiseSwagger() {
-    //expressJSDocSwagger(this.express)(swaggerOptions);
-    //console.log(swaggerOptions);
-    // }
 
     private initialiseDatabaseConnection() {
         const { MONGO_METHOD, MONGO_USER, MONGO_PASSWORD, MONGO_PATH } = process.env;
@@ -75,7 +65,7 @@ class App {
 
     public listen(): void {
         this.express.listen(this.port, () => {
-            Logger.debug(`Server is up and running @ http://:${this.port}`);
+            Logger.debug(`Server is up and running on port : ${this.port}`);
         });
     }
 

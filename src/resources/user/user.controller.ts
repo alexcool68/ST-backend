@@ -30,7 +30,6 @@ class UserController implements Controller {
      */
     private getUsers = async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
         const users = await this.UserService.getUsers();
-
         res.status(HTTPCodes.OK).json({ status: 'success', results: users.length, users });
     };
 

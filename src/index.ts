@@ -8,12 +8,10 @@ import SystemController from '@/resources/system/system.controller';
 import fetchStatsJob from '@/jobs/fetchStats.job';
 
 validateEnv();
-require('dotenv').config();
 
 const constructors = [new AuthController(), new UserController(), new SystemController()];
 const jobs = [new fetchStatsJob()];
 
-// const app = new App(constructors, jobs, String(process.env.HOST), Number(process.env.PORT));
 const app = new App(constructors, jobs, Number(process.env.PORT));
 
 app.listen();

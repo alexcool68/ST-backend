@@ -1,8 +1,7 @@
-import { cleanEnv, str, host, port, email, num } from 'envalid';
+import { cleanEnv, str, port, email, num } from 'envalid';
 
 function validateEnv(): void {
     cleanEnv(process.env, {
-        HOST: host(),
         PORT: port({ default: 3000 }),
         NODE_ENV: str({
             choices: ['development', 'production'],
