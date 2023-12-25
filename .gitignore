@@ -7,7 +7,6 @@ npm-debug.log*
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
 dist
 
 # Dependency directories
@@ -26,7 +25,7 @@ node_modules/
 .stylelintcache
 
 # dotenv environment variable files
-# .env
+.env
 # .env.development.local
 # .env.test.local
 # .env.production.local
@@ -34,3 +33,4 @@ node_modules/
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+.vscode
